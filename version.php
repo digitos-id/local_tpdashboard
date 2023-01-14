@@ -16,9 +16,9 @@
 
 
 /**
- * Pintar analytic block version details
+ * Custom Dashboard local version details
  *
- * @package    block_tpdashboard
+ * @package    local_tpdashboard
  * @copyright  2023 Prihantoosa
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
