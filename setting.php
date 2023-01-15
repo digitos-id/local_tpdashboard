@@ -17,6 +17,6 @@ if ($hassiteconfig) {
     $ADMIN->add('tpdashboard', new admin_externalpage('userdata', get_string('userdata',local_tpdashboard),
                                 new moodle_url('/local/tpdashboard/userdata.php')));
 
-    $ADMIN->add('tpdashboard', new admin_externalpage('userdata', get_string('userdata',local_tpdashboard),
-                                new moodle_url('/local/tpdashboard/userdata.php')));
+    $ADMIN->add('tpdashboard', new admin_externalpage('usermetadata', get_string('usermetadata',local_tpdashboard),
+                                new moodle_url('/local/tpdashboard/metadata.php')));
 }
