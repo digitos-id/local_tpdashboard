@@ -47,10 +47,10 @@ echo $OUTPUT->render_from_template('local_tpdashboard/index_template',['teks'=> 
 // Membaca data yang dikirim melalui URL berupa array yang dikirim menggunakan 
 // $url + http_build_query($dataid);
 //
-$idArray = explode('&',$_SERVER["QUERY_STRING"]);
-foreach ($idArray as $index => $avPair) {
- list($ignore, $value) = explode('=',$avPair);
- $id[$index] = $value;
-}
+// $idArray = explode('&',$_SERVER["QUERY_STRING"]);
+// foreach ($idArray as $index => $avPair) {
+//  list($ignore, $value) = explode('=',$avPair);
+//  $id[$index] = $value;
+// }
 
 echo $OUTPUT->footer();
