@@ -17,11 +17,12 @@ $PAGE->set_url(new moodle_url('/local/tpdashboard/myprofile.php'));
 $PAGE->set_pagelayout('dashboard');
 $PAGE->set_title(get_string('pluginname','local_tpdashboard'));
 
-$PAGE->set_title(title: 'My Profile');
-
+$PAGE->set_title('My Profile');
 
 echo $OUTPUT->header();
 
-echo '<h1>Personal Dashboard</h1>';
+echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',[
+  'title'=> 'My Profile'
+]);
 
 echo $OUTPUT->footer();
