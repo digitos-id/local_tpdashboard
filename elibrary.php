@@ -11,7 +11,7 @@
 
  require_once('../../config.php');
 
- $context = context_system::instance();
+$context = context_system::instance();
 $PAGE->set_context($context);
 $PAGE->set_url(new moodle_url('/local/tpdashboard/elibrary.php'));
 $PAGE->set_pagelayout('dashboard');
