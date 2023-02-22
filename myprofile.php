@@ -7,6 +7,7 @@
  * @package    local_tpdashboard/myprofile
  * @copyright  2023 Prihantoosa
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * 
  */
 
  require_once('../../config.php');
@@ -15,14 +16,10 @@
 $PAGE->set_context($context);
 $PAGE->set_url(new moodle_url('/local/tpdashboard/myprofile.php'));
 $PAGE->set_pagelayout('dashboard');
-$PAGE->set_title(get_string('pluginname','local_tpdashboard'));
-
-$PAGE->set_title('My Profile');
+$PAGE->set_title(get_string('myprofiletitle','local_tpdashboard'));
 
 echo $OUTPUT->header();
-
-echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',[
-  'title'=> 'My Profile'
-]);
+echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',['teks'=> 'My Profile']);
+// echo '<h1>Personal Dashboard</h1>';
 
 echo $OUTPUT->footer();
