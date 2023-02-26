@@ -21,6 +21,11 @@ $PAGE->set_title('Elibrary');
 
 echo $OUTPUT->header();
 
+$data = [
+  'title'=> 'Elibrary',
+  'description' => format_text($description, FORMAT_HTML),
+];
+
 echo $OUTPUT->render_from_template('local_tpdashboard/elibrary',[
   'title'=> 'Elibrary'
 ]);
