@@ -20,7 +20,15 @@ $PAGE->set_pagelayout('dashboard');
 $PAGE->set_title(get_string('myprofiletitle','local_tpdashboard'));
 
 echo $OUTPUT->header();
-echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',['teks'=> 'My Profile']);
+
+ $data = [
+     'imgurl' => getprofilepictureurl($userid),
+     'description' => format_text($description, FORMAT_HTML)
+ ];
+
+echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',$data);
+
+// echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',['teks'=> 'My Profile']);
 // echo '<h1>Personal Dashboard</h1>';
 
 echo $OUTPUT->footer();
