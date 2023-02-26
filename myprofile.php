@@ -10,7 +10,7 @@
  * 
  */
 
- require_once('../../config.php');
+require_once('../../config.php');
 require_login();
 
  $context = context_system::instance();
