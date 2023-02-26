@@ -11,5 +11,57 @@
     You should have received a copy of the GNU General Public License
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
-<div><img src = "/pix/tumbuhdanlogoTriputraGroup_2048x512.png" width=512 ></div><div>TRIPUTRA GROUP</div><div>PERSONAL DASHBOARD</div>
-<div>{{teks}}</div>
+
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-md-8"><img src = "/pix/tumbuhdanlogoTriputraGroup_2048x512.png" width="300"></div>
+
+        <div class="d-flex align-items-center font-weight-bolder">
+            <h1>PERSONAL DASHBOARD</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card">
+                <div class="card-header text-center bg-info">
+                    <h5 class="text-white font-weight-bolder">{{title1}}</h5>
+                </div>
+                <div class="card-body">
+                        <div class="page-header-image mr-2">
+                                <img src = {{profileimgurl}} class='userpicture'>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center bg-info">
+                    <h5 class="text-white font-weight-bolder">{{title2}}</h5>
+                </div>
+                <div class="card-body">
+
+                    <a href="#" class="btn btn-primary">BIODATA</a>
+                    <a href="#" class="btn btn-primary">Ubah Kata Sandi</a>
+                    <p class="card-text">Fristname: {{firstname}}</p>
+                    <p class="card-text">Subholding: {{subholding}}</p>
+                    <p class="card-text">Subcompany: {{subcompany}}</p>
+                    <p class="card-text">Tanggal lahir: {{tgllahir}}</p>
+                    <p class="card-text">Email: {{email}}</p>
+                    <p class="card-text">HP: {{hp}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+                    <div class="card">
+                        <div class="card-header text-center bg-info">
+                            <h5 class="text-white font-weight-bolder">x</h5>
+                        </div>
+                        <div class="card-body">
+                                <div class="page-header-image mr-2">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+</div>
