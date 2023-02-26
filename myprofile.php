@@ -20,16 +20,20 @@ $PAGE->set_pagelayout('dashboard');
 $PAGE->set_title(get_string('myprofiletitle','local_tpdashboard'));
 
 echo $OUTPUT->header();
+$userid = $USER->id;
+$user_object = core_user::get_user($userid);
+
+# Untuk Echo langsung image berikut html
+# $conditions = array('size' => '100', 'link' => false, 'class' => '');
+# $person_profile_pic = $OUTPUT->user_picture($user_object, $conditions);
+# echo $person_profile_pic;
 
  $data = [
-     'imgurl' => getprofilepictureurl($userid),
+     'profileimgurl' => getprofilepictureurl($user_object),
      'description' => format_text($description, FORMAT_HTML)
  ];
 
 echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',$data);
-
-// echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',['teks'=> 'My Profile']);
-// echo '<h1>Personal Dashboard</h1>';
 
 echo $OUTPUT->footer();
 
