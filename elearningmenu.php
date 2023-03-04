@@ -14,6 +14,7 @@
 
  require_once('../../config.php');
  require_once($CFG->dirroot.'/user/profile/lib.php');
+require_login();
  
  $context = context_system::instance();
  $PAGE->set_context($context);
