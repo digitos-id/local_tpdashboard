@@ -158,7 +158,8 @@ foreach ($badges as $badge) {
 $badges_list = html_writer::alist($items, array('class' => 'badges'));
 
 $data = [
-    'badges_list' => $badges_list
+    'badges_list' => $badges_list,
+    'title2' => "Ladder Dashboard"
 ];
 
 echo $OUTPUT->render_from_template('local_tpdashboard/mybadges', $data);
