@@ -10,7 +10,14 @@
  * 
  */
 
+use local_tpdashboard\form\profile;
+
 require_once('../../config.php');
+require_once($CFG->dirroot . '/my/lib.php');
+require_once($CFG->dirroot . '/user/profile/lib.php');
+require_once($CFG->dirroot . '/user/lib.php');
+require_once('classes/form/profile.php');
+
 require_login();
 
  $context = context_system::instance();
@@ -19,9 +26,23 @@ $PAGE->set_url(new moodle_url('/local/tpdashboard/myprofile.php'));
 $PAGE->set_pagelayout('dashboard');
 $PAGE->set_title(get_string('myprofiletitle','local_tpdashboard'));
 
-echo $OUTPUT->header();
 $userid = $USER->id;
 $user_object = core_user::get_user($userid);
+$user = $DB->get_record('user', array('id' => $userid));
+// die (fullname($user));
+// print_r ($USER);
+// print_r($USER->profile['subholding']);
+// $PAGE->set_title("Test");
+// $PAGE->set_heading(fullname($user));
+// $tab = optional_param('t', 1, PARAM_INT);
+// $tabs = [];
+// $tabs[] = new tabobject(1, new moodle_url($url, ['t'=>1]), $tab1_title);
+// $tabs[] = new tabobject(2, new moodle_url($url, ['t'=>2]), $tab2_title);
+// echo $OUTPUT->tabtree($tabs, $tab);
+
+$mformprofile = new profile();
+echo $OUTPUT->header();
+echo $OUTPUT->heading($userfullname);
 
 # Untuk Echo langsung image berikut html
 # $conditions = array('size' => '100', 'link' => false, 'class' => '');
@@ -30,7 +51,13 @@ $user_object = core_user::get_user($userid);
 
  $data = [
      'profileimgurl' => getprofilepictureurl($user_object),
-     'description' => format_text($description, FORMAT_HTML)
+     'description' => format_text($description, FORMAT_HTML),
+     'userfullname' => fullname($user),
+     'email' => $USER->email,
+     'phone1' => $USER->phone1,
+     'subholding' => $USER->profile['subholding'],
+     'profileform' => $mformprofile->render()
+    // 'subholding' => "PT A A"
  ];
 
 echo $OUTPUT->render_from_template('local_tpdashboard/myprofile_template',$data);
