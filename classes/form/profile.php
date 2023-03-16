@@ -113,16 +113,16 @@ class profile extends moodleform {
         $mform->setType('phone1', core_user::get_property_type('phone1'));
         $mform->setForceLtr('phone1');
 
-        $options = array('language'=>'en', 'format'=>'dmY', 'optional' => true, 'addEmptyOption' => true, 'optionIncrement'=>array('i'=>'5'));
-        $fieldtype = 'date_selector';
+        // $options = array('language'=>'en', 'format'=>'dmY', 'optional' => true, 'addEmptyOption' => true, 'optionIncrement'=>array('i'=>'5'));
+        // $fieldtype = 'date_selector';
 
-        $mform->addElement($fieldtype, 'tanggal', 'tanggal', $options);
+        // $mform->addElement($fieldtype, 'tanggal', 'tanggal', $options);
 
-        $dateg=array();
-        $dateg[] =& $mform->createElement('text', 'datetext', get_string('datetext','module'));
-        $dateg[] =& $mform->createElement('button', 'choosedate', get_string('choosedate','module'),array("onClick" =>"datePickerShow('id_datetext');"));
-        $mform->addGroup($dateg, 'choosedate', get_string('choosedate','module'), array(' '), false);
-        $mform->setDefault('datetext', 'xxxx');
+        // $dateg=array();
+        // $dateg[] =& $mform->createElement('text', 'datetext', get_string('datetext','module'));
+        // $dateg[] =& $mform->createElement('button', 'choosedate', get_string('choosedate','module'),array("onClick" =>"datePickerShow('id_datetext');"));
+        // $mform->addGroup($dateg, 'choosedate', get_string('choosedate','module'), array(' '), false);
+        // $mform->setDefault('datetext', 'xxxx');
 
         // $mform->addElement('text', 'firstname', get_string('firstname')); // Add elements to your form
         // $mform->setType('messagetext', PARAM_NOTAGS);
