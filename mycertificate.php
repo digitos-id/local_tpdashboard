@@ -9,6 +9,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * 
  */
+// https://www.nelayankode.com/2022/03/cara-membuat-popup-image-lightbox.html
 
 require_once('../../config.php');
 require_once($CFG->dirroot . '/mod/customcert/classes/certificate.php');
@@ -128,13 +129,15 @@ foreach ($rawdata as $id => $record) {
     $im->setResolution(300, 300);     //set the resolution of the resulting jpg
     $im->readImageBlob($output);    //[0] for the first page
     $im->setImageFormat('jpg');
-    $im->writeImage('pix/' . $filename . '_' . $userid . '.jpg');
+    $certificate_file_base = $filename . '_' . $userid; 
+    $certificate_file_path = 'pix/certificate/' . $certificate_file_base . '.jpg'; 
+    $im->writeImage($certificate_file_path);
     // header('Content-Type: image/jpeg');
     // echo $im;
     // echo '<img src="data:image/jpg;base64,'.base64_encode($im->getImageBlob()).'" alt="" />';]
     $file_data = [
-        "filename" => 'pix/' . $filename . '_' . $userid . '.jpg',
-        "filename_base" => $filename . '_' . $userid,
+        "filename" => $certificate_file_path,
+        "filename_base" => $certificate_file_base,
         "name" => $name
     ];
     $filename_list[] = $file_data;
