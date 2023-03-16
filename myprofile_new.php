@@ -84,7 +84,7 @@ if ($user->id == $USER->id) {
 
 $PAGE->set_pagelayout('admin');
 $PAGE->add_body_class('limitedwidth');
-$PAGE->set_context($personalcontext);
+// $PAGE->set_context($personalcontext);
 if ($USER->id != $user->id) {
     $PAGE->navigation->extend_for_user($user);
 } else {
@@ -305,7 +305,7 @@ if ($mformpassword->is_cancelled()) {
     $PAGE->set_heading(fullname($USER));
     echo $OUTPUT->header();
 
-    notice($strpasswordchanged, new moodle_url($PAGE->url, array('return'=>1)));
+    notice($strpasswordchanged, new moodle_url($PAGE->url . "#tab2", array('return'=>1)));
 
     echo $OUTPUT->footer();
     exit;
