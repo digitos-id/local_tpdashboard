@@ -56,7 +56,7 @@ $rawdata = \mod_customcert\certificate::get_certificates_for_user($userid, $page
 
 foreach ($rawdata as $id => $record) {
     // echo $record->id;
-    $customcert = $DB->get_record('customcert', array('id' => 1), '*', MUST_EXIST);
+    $customcert = $DB->get_record('customcert', array('id' => $id), '*', MUST_EXIST);
     $template_temp = $DB->get_record('customcert_templates', array('id' => $customcert->templateid), '*', MUST_EXIST);
     $template = new \mod_customcert\template($template_temp);
     // var_dump($template_temp->name);
@@ -132,6 +132,9 @@ foreach ($rawdata as $id => $record) {
     $certificate_file_base = $filename . '_' . $userid; 
     $certificate_file_path = 'pix/certificate/' . $certificate_file_base . '.jpg'; 
     $im->writeImage($certificate_file_path);
+    $url_download = $url = new moodle_url('/mod/customcert/my_certificates.php', array(
+        'userid' => $userid,'certificateid'=> $id, 'downloadcert' => 1
+    ));
     // header('Content-Type: image/jpeg');
     // echo $im;
     // echo '<img src="data:image/jpg;base64,'.base64_encode($im->getImageBlob()).'" alt="" />';]
@@ -149,6 +152,7 @@ echo $OUTPUT->header();
 
 $data = [
     'certificate_list' => $filename_list,
+    'url_download' => $url_download,
     'title' => "Ladder Dashboard"
 ];
 
