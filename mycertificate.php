@@ -130,7 +130,7 @@ foreach ($rawdata as $id => $record) {
     $im->readImageBlob($output);    //[0] for the first page
     $im->setImageFormat('jpg');
     $certificate_file_base = $filename . '_' . $userid; 
-    $certificate_file_path = 'pix/certificate/' . $certificate_file_base . '.jpg'; 
+    $certificate_file_path = 'pix/certificate/tpg_' . $certificate_file_base . '.jpg'; 
     $im->writeImage($certificate_file_path);
     $url_download = $url = new moodle_url('/mod/customcert/my_certificates.php', array(
         'userid' => $userid,'certificateid'=> $id, 'downloadcert' => 1
