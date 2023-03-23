@@ -19,8 +19,10 @@ require_login();
  $context = context_system::instance();
  $PAGE->set_context($context);
  $PAGE->set_url(new moodle_url('/local/tpdashboard/elearningmenu.php'));
- $PAGE->set_pagelayout('dashboard');
+//  $PAGE->set_pagelayout('dashboard');
+ $PAGE->set_pagelayout('standard');
  $PAGE->set_title(get_string('myprofiletitle','local_tpdashboard'));
+ $PAGE->requires->css('/local/tpdashboard/styles_menu_2.css');
  
  $userid = $USER->id;
  $user_object = core_user::get_user($userid);
@@ -50,7 +52,7 @@ require_login();
   //
  
  echo $OUTPUT->header();
- echo $OUTPUT->render_from_template('local_tpdashboard/elearningmenu_template',$data);
+ echo $OUTPUT->render_from_template('local_tpdashboard/elearningmenu_template_new',$data);
  // echo '<h1>Personal Dashboard</h1>';
  
  echo $OUTPUT->footer();
