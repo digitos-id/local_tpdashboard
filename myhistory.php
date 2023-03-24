@@ -98,7 +98,8 @@ foreach ($courses as $id => $course) {
     $row = new html_table_row();
     $datecell = new html_table_cell(userdate($course->startdate, '%B %Y'));
     $row->cells[] = $datecell;
-    $namecell = new html_table_cell($course->fullname);
+    $course_url_tag = html_writer::link($courseurl, $course->fullname); 
+    $namecell = new html_table_cell($course_url_tag);
     $row->cells[] = $namecell;
     if ($progress == 100) {
         $statuscell = new html_table_cell("Sukses");
