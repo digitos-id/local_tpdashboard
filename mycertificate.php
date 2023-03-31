@@ -116,7 +116,7 @@ foreach ($rawdata as $id => $record) {
                 foreach ($elements as $element) {
                     // Get an instance of the element class.
                     if ($e = \mod_customcert\element_factory::get_element_instance($element)) {
-                        $e->render($pdf, $preview, $user);
+                        $e->render($pdf, false, $user);
                     }
                 }
             }
